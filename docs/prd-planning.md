@@ -101,7 +101,7 @@ Note: Use of a third-party enum library versus a custom enum approach is a techn
 ### FR-7 Mobile Navigation
 
 1. Mobile web must include a **side menu**.
-2. PRD-level interaction behavior must define exactly how the side menu is triggered (for example, icon tap and/or gesture).
+2. Exact trigger behavior is pending and tracked in Open Question #6.
 
 ### FR-8 Audit Metadata
 
@@ -150,8 +150,8 @@ No additional session-level tracking is required.
 3. **Reminder offset options**
    - Final list of reminder choices (for example, 1 day, 2 days, 1 week).
 
-4. **“Others with mentions” (stakeholder term)**
-   - Clarify whether “Others” entries support free-text mention, tagging, or predefined sub-values.
+4. **“Others with mentions” for Money spent category “Others” (stakeholder term)**
+   - Clarify whether entries using the Money spent “Others” category support free-text mention, tagging, or predefined sub-values.
 
 5. **Sort/filter persistence model**
    - Confirm whether persistence is local-only (client/device) or server-backed (account-level).
