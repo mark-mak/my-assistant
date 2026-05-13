@@ -150,3 +150,25 @@ VITE_APP_ENV=           # development | staging | production
 ```
 
 All client-side env variables must be prefixed with `VITE_` to be exposed to the browser bundle.
+
+---
+
+## Recommended Priorities vs. Further Consideration
+
+To keep the first implementation pragmatic, the following topics are split into **recommended now** and **further consideration**.
+
+### Recommended now
+
+- **Design tokens and reusable UI primitives**: establish colour, spacing, typography, and base components early so the UI remains consistent without committing to a full design system upfront.
+- **Feature-Sliced Design direction**: keep the feature-oriented structure described above as the default scaling pattern for the application.
+- **End-to-end type safety**: use typed service contracts and shared domain models so API interactions remain explicit and safe.
+- **Zustand + TanStack Query split**: keep UI/session state in Zustand and server state in TanStack Query.
+- **Linting, formatting, and CI quality gates**: adopt ESLint, Prettier, type-checking, and automated tests as the minimum merge gate.
+
+### Further consideration
+
+- **Micro-frontends**: only introduce if multiple teams need independent deployment and ownership boundaries.
+- **Hybrid rendering or edge deployments**: evaluate later if SEO, first-load performance, or regional latency becomes a real product requirement.
+- **Visual regression testing**: useful once the interface becomes stable enough that screenshot baselines are worth maintaining.
+- **Broader DevSecOps automation**: expand beyond baseline CI gates when deployment maturity and team size justify the extra operational overhead.
+- **i18n**: add when multilingual support becomes a confirmed product need rather than an assumption.
