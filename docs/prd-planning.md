@@ -1,129 +1,166 @@
-# PRD Planning
+# Product Requirements Document (PRD)
 
-This document consolidates the currently confirmed product requirements and the remaining clarification items before turning them into a formal PRD.
+## 1. Document Information
 
-## Confirmed Requirements
+- **Product**: my-assistant
+- **Document type**: Product Requirements Document
+- **Version**: v0.1
+- **Status**: Draft for review
 
-### 1. Member Management
+## 2. Purpose and Scope
 
-- Members can be deleted through a **soft delete** approach.
-- Historical records must continue displaying references to deleted members.
-- The PRD must define where deleted members remain visible and where they are excluded from active selection lists.
+This PRD defines the phase-1 product requirements for member handling, controlled values, calendar and reminders, money summary behavior, default sorting/filter behavior, mobile navigation, audit metadata, and session scope.
 
-### 2. Enums / Controlled Values
+This document focuses on **product behavior**. Technical implementation details (for example, enum library vs custom enum type) are intentionally excluded unless they affect user-facing outcomes.
 
-The product should use controlled values for the following:
+## 3. Goals
 
-- **Currency**
-  - Default currency: **HKD**
-- **Priority**
-  - Highest
-  - High
-  - Medium
-  - Low
-  - Lowest
-- **Status**
-  - Draft
-  - Ready
-  - Done
-- **Money spent category**
-  - Dining
-  - Entertainment
-  - Shopping
-  - Travel
-  - Transportation
-  - Household
-  - Personal Care
-  - Fixed Payment
-  - Medical and Health
-  - Personal Development
-  - Others
+1. Standardize core data behavior and defaults across modules.
+2. Provide consistent calendar/reminder handling with clear boundaries.
+3. Ensure user-visible consistency for filtering, sorting, summaries, and metadata.
+4. Establish clear phase-1 scope and unresolved decisions before implementation.
 
-Whether these are implemented with a library or custom enums is a technical design decision and should not block the PRD.
+## 4. Out of Scope (Phase 1)
 
-### 3. Calendar / Schedule
+- Recurring reminder behavior.
+- Session-level tracking beyond selected family member.
+- Technical framework decisions that do not change product behavior.
 
-- Support a **month view** for the calendar.
-- Schedule items can **overlap**.
-- Support **simple recurring events**.
-- Recurring events must include:
-  - recurrence interval
-  - start date
-  - end date
-- Supported recurrence patterns should be explicitly listed in the PRD, such as:
-  - by day
-  - by weekday
-  - by week
-- Maximum recurrence range: **1 year**
-- Default timezone: **HKT (UTC+8)**
+## 5. Functional Requirements
 
-### 4. Reminder / Due Soon
+### FR-1 Member Management
 
-- “Due soon” should be driven by the configured **reminder offset**.
-- When reminder is enabled, users can choose reminder timing such as:
-  - two days before
-  - one week before
-- No recurring reminder behavior is required in this phase.
-- Reminder support applies across **all modules** in scope.
+1. The system must support member deletion through **soft delete**.
+2. Historical records must continue displaying references to soft-deleted members.
+3. The product must define visibility behavior for soft-deleted members across:
+   - display contexts (where they remain visible)
+   - active selection contexts (where they are excluded)
 
-### 5. Money Summary
+### FR-2 Controlled Values (Enums)
 
-- Default filter: **current month**
-- If no records exist for the active filter, show an **empty-state message**
-- Default grouping: **category**
-- Table totals and chart totals must always match the currently active filters
+The system must use controlled values for the following fields:
 
-### 6. Default Sorting and Filter Persistence
+1. **Currency**
+   - Allowed values include at least: HKD
+   - Default value: **HKD**
+2. **Priority**
+   - Highest, High, Medium, Low, Lowest
+3. **Status**
+   - Draft, Ready, Done
+4. **Money spent category**
+   - Dining
+   - Entertainment
+   - Shopping
+   - Travel
+   - Transportation
+   - Household
+   - Personal Care
+   - Fixed Payment
+   - Medical and Health
+   - Personal Development
+   - Others
 
-- Default sorting: **date descending** (most recent first)
-- Default filter: **this month**
-- After refresh, the product should show the same default sorting and filtering behavior
+Note: Use of a third-party enum library versus a custom enum approach is a technical design decision and is not a PRD blocker.
 
-### 7. Mobile Navigation
+### FR-3 Calendar / Schedule
 
-- Add a **side menu** for the mobile web experience
-- The PRD should define how the side menu is triggered to show
+1. The calendar must support **month view**.
+2. The schedule must allow **overlapping schedule items**.
+3. The system must support **simple recurring events**.
+4. Each recurring event must include:
+   - interval
+   - start date
+   - end date
+5. Supported recurrence examples must be explicitly represented in product behavior:
+   - daily recurrence
+   - weekday-based recurrence
+   - weekly recurrence
+6. Recurrence range must be limited to a maximum of **1 year**.
+7. Default timezone must be **HKT (UTC+8)**.
 
-### 8. Audit Metadata
+### FR-4 Reminder / Due Soon
 
-Display the following on both:
+1. “Due soon” status must be derived from each item’s configured **reminder offset**.
+2. When reminders are enabled, users must be able to select reminder timing options (for example: 2 days before, 1 week before).
+3. Reminder behavior in this phase must be **non-recurring**.
+4. Reminder and due-soon behavior must apply consistently across **all in-scope modules**.
 
-- detail views
-- list/table views
+### FR-5 Money Summary
 
-Required audit fields:
+1. Default filter must be **current month**.
+2. Default grouping must be **category**.
+3. When no records match the active filters, the UI must show an empty-state message.
+4. Table totals and chart totals must always match the currently active filters.
+
+### FR-6 Default Sorting and Filter Persistence
+
+1. Default sorting must be **date descending** (most recent first).
+2. Default filter must be **this month**.
+3. After refresh, the user must see the same default sorting/filter behavior.
+
+### FR-7 Mobile Navigation
+
+1. Mobile web must include a **side menu**.
+2. PRD-level interaction behavior must define exactly how the side menu is triggered (for example, icon tap and/or gesture).
+
+### FR-8 Audit Metadata
+
+The system must display:
 
 - **last updated at**
 - **last updated by**
 
-### 9. Session Scope
+for both:
 
-- There is no need for session-level tracking in this phase beyond **selected family member**
+1. detail views
+2. list/table views
 
-## Open Clarification Items
+### FR-9 Session Scope
 
-The following items should be resolved in the PRD before implementation begins:
+Phase 1 session tracking is limited to **selected family member** only.
+
+No additional session-level tracking is required.
+
+## 6. Defaults and Global Rules
+
+1. **Timezone default**: HKT (UTC+8)
+2. **Date sorting default**: descending
+3. **Date filter default**: current month / this month
+4. **Money summary grouping default**: category
+5. **Currency default**: HKD
+
+## 7. Acceptance Criteria (Phase 1)
+
+1. Product behaviors in FR-1 to FR-9 are implemented and testable at UI level.
+2. Default behaviors are applied consistently after page refresh.
+3. Money summary totals are consistent between table and chart for identical filters.
+4. Historical records continue to resolve deleted member references.
+5. Audit metadata appears in both detail and list/table views.
+6. Recurrence is bounded to 1 year and uses HKT as default timezone.
+
+## 8. Open Questions / Clarifications Required
 
 1. **Soft-deleted member visibility**
-   - Where should deleted members still appear?
-   - Where should deleted members be hidden from selection?
+   - Exact list of screens/components where soft-deleted members remain visible.
+   - Exact selection controls where soft-deleted members are excluded.
 
 2. **Recurrence options**
-   - What exact recurrence patterns are allowed in the first version?
+   - Final allowed recurrence patterns for phase 1 (exact set and labels).
 
 3. **Reminder offset options**
-   - What exact reminder choices should be available to users?
+   - Final list of reminder choices (for example, 1 day, 2 days, 1 week).
 
-4. **“Others with mentions” meaning**
-   - Does “Others” allow free-text notes, tags, or structured sub-labels?
+4. **“Others with mentions”**
+   - Clarify whether “Others” supports free-text mention, tagging, or predefined sub-values.
 
-5. **Sort/filter persistence behavior**
-   - Should persistence be local-only or stored server-side?
+5. **Sort/filter persistence model**
+   - Confirm whether persistence is local-only (client/device) or server-backed (account-level).
 
 6. **Mobile side-menu trigger**
-   - Should it open from a menu icon, gesture, or another explicit trigger?
+   - Confirm exact trigger interaction(s): icon tap, swipe gesture, or both.
 
-## Notes for PRD Drafting
+## 9. Risks and Dependencies
 
-- Treat the items above as confirmed input for PRD drafting rather than implementation-ready technical specifications.
-- Keep technical implementation choices separate from product requirements unless they materially affect user behavior.
+1. Unresolved open questions may delay implementation or create inconsistent module behavior.
+2. Cross-module reminder behavior requires consistent domain definitions across all feature modules.
+3. Audit metadata display depends on reliable availability of updated-at / updated-by data in all relevant records.
