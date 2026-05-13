@@ -41,7 +41,7 @@ This document focuses on **product behavior**. Technical implementation details 
 The system must use controlled values for the following fields:
 
 1. **Currency**
-   - Allowed values include at least: HKD
+   - Allowed value in phase 1: HKD
    - Default value: **HKD**
 2. **Priority**
    - Highest, High, Medium, Low, Lowest
@@ -150,8 +150,8 @@ No additional session-level tracking is required.
 3. **Reminder offset options**
    - Final list of reminder choices (for example, 1 day, 2 days, 1 week).
 
-4. **“Others with mentions”**
-   - Clarify whether “Others” supports free-text mention, tagging, or predefined sub-values.
+4. **“Others with mentions” (stakeholder term)**
+   - Clarify whether “Others” entries support free-text mention, tagging, or predefined sub-values.
 
 5. **Sort/filter persistence model**
    - Confirm whether persistence is local-only (client/device) or server-backed (account-level).
