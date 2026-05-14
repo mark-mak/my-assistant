@@ -23,3 +23,9 @@ This directory contains individual story files split from `docs/story-planning.m
 
 - [Story 4.1 — Soft delete member](./story-4.1-soft-delete-member.md)
 - [Story 4.2 — Soft-deleted member visibility matrix](./story-4.2-soft-deleted-member-visibility-matrix.md)
+
+## Epic 5 — Shared Defaults and Metadata
+
+- [Story 5.1 — Global timezone and date defaults](./story-5.1-global-timezone-and-date-defaults.md)
+- [Story 5.2 — Sort and filter persistence](./story-5.2-sort-and-filter-persistence.md)
+- [Story 5.3 — Audit metadata display](./story-5.3-audit-metadata-display.md)
