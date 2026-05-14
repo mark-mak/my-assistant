@@ -1,0 +1,51 @@
+pipeline:
+  name: repo_hygiene
+  identifier: repo_hygiene
+  projectIdentifier: myassistant
+  orgIdentifier: default
+  description: Validate documentation and repository structure for the current planning-phase repo.
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: <+pipeline.variables.codebase_connector>
+        repoName: my-assistant
+        build: <+input>
+  stages:
+    - stage:
+        name: validate_repo
+        identifier: validate_repo
+        description: Run repo-aware quality gates until the app scaffold exists.
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: validate_required_files
+                  identifier: validate_required_files
+                  spec:
+                    connectorRef: <+pipeline.variables.container_connector>
+                    image: bash:5.2
+                    shell: Bash
+                    command: |-
+                      chmod +x ./scripts/validate-repo.sh
+                      ./scripts/validate-repo.sh
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+  variables:
+    - name: codebase_connector
+      type: String
+      description: GitHub connector for the mark-mak/my-assistant repository.
+      required: true
+      value: <+input>
+    - name: container_connector
+      type: String
+      description: Connector used to pull the step container image.
+      required: true
+      value: <+input>
