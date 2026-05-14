@@ -6,8 +6,8 @@ This repository is currently a planning/docs repository, so the initial Harness 
 
 ## Repository CI assets
 
-- Harness pipeline definition: `/home/runner/work/my-assistant/my-assistant/.harness/repo_hygiene.yaml`
-- Local validation script: `/home/runner/work/my-assistant/my-assistant/scripts/validate-repo.sh`
+- Harness pipeline definition: `.harness/repo_hygiene.yaml`
+- Local validation script: `scripts/validate-repo.sh`
 
 ## What the baseline pipeline checks
 
@@ -23,7 +23,7 @@ This repository is currently a planning/docs repository, so the initial Harness 
 ### 1. Add the GitHub repository
 
 1. Create or reuse a GitHub connector in Harness with access to `mark-mak/my-assistant`.
-2. Import `/home/runner/work/my-assistant/my-assistant/.harness/repo_hygiene.yaml` as a CI pipeline.
+2. Import `.harness/repo_hygiene.yaml` as a CI pipeline.
 3. Provide the `codebase_connector` pipeline variable with the GitHub connector reference.
 
 ### 2. Configure the container image connector
@@ -53,13 +53,13 @@ Configure the following triggers in Harness:
 Run the same repository checks locally:
 
 ```bash
-/home/runner/work/my-assistant/my-assistant/scripts/validate-repo.sh
+./scripts/validate-repo.sh
 ```
 
 When the application scaffold is added later, enable the future-file checks:
 
 ```bash
-EXPECT_APP_SCAFFOLD=true /home/runner/work/my-assistant/my-assistant/scripts/validate-repo.sh
+EXPECT_APP_SCAFFOLD=true ./scripts/validate-repo.sh
 ```
 
 ## Next revision point
