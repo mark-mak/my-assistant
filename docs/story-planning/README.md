@@ -33,3 +33,10 @@ This directory contains individual story files split from `docs/story-planning.m
 ## Epic 6 — Controlled Values
 
 - [Story 6.1 — Shared controlled values definitions](./story-6.1-shared-controlled-values-definitions.md)
+
+## Epic 7 — Calendar and Reminders
+
+- [Story 7.1 — Calendar month view](./story-7.1-calendar-month-view.md)
+- [Story 7.2 — Overlapping schedule items](./story-7.2-overlapping-schedule-items.md)
+- [Story 7.3 — Simple recurring events](./story-7.3-simple-recurring-events.md)
+- [Story 7.4 — Reminder offsets and due-soon logic](./story-7.4-reminder-offsets-and-due-soon-logic.md)
