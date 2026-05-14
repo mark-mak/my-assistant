@@ -18,3 +18,8 @@ This directory contains individual story files split from `docs/story-planning.m
 
 - [Story 3.1 — Prevent removing the last family member](./story-3.1-prevent-removing-the-last-family-member.md)
 - [Story 3.2 — Member removal UX and messaging](./story-3.2-member-removal-ux-and-messaging.md)
+
+## Epic 4 — Member Management
+
+- [Story 4.1 — Soft delete member](./story-4.1-soft-delete-member.md)
+- [Story 4.2 — Soft-deleted member visibility matrix](./story-4.2-soft-deleted-member-visibility-matrix.md)
