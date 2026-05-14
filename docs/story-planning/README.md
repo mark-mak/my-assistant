@@ -29,3 +29,7 @@ This directory contains individual story files split from `docs/story-planning.m
 - [Story 5.1 — Global timezone and date defaults](./story-5.1-global-timezone-and-date-defaults.md)
 - [Story 5.2 — Sort and filter persistence](./story-5.2-sort-and-filter-persistence.md)
 - [Story 5.3 — Audit metadata display](./story-5.3-audit-metadata-display.md)
+
+## Epic 6 — Controlled Values
+
+- [Story 6.1 — Shared controlled values definitions](./story-6.1-shared-controlled-values-definitions.md)
