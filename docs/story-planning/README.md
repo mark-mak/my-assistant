@@ -13,3 +13,8 @@ This directory contains individual story files split from `docs/story-planning.m
 - [Story 2.1 — Post-login family group landing page](./story-2.1-post-login-family-group-landing-page.md)
 - [Story 2.2 — Create family group flow](./story-2.2-create-family-group-flow.md)
 - [Story 2.3 — No-family-group empty state](./story-2.3-no-family-group-empty-state.md)
+
+## Epic 3 — Family Membership Guardrails
+
+- [Story 3.1 — Prevent removing the last family member](./story-3.1-prevent-removing-the-last-family-member.md)
+- [Story 3.2 — Member removal UX and messaging](./story-3.2-member-removal-ux-and-messaging.md)
