@@ -2,7 +2,7 @@
 
 This directory contains individual story files split from `docs/story-planning.md`.
 
-## Epic 8 — Money Summary
+## Epic 9 — Chore and Shopping Alignment
 
-- [Story 8.1 — Money summary default state](./story-8.1-money-summary-default-state.md)
-- [Story 8.2 — Money summary total consistency](./story-8.2-money-summary-total-consistency.md)
+- [Story 9.1 — Shared status model for shopping and chores](./story-9.1-shared-status-model-for-shopping-and-chores.md)
+- [Story 9.2 — Chore recurrence and completion defaults](./story-9.2-chore-recurrence-and-completion-defaults.md)
