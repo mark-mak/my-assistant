@@ -27,10 +27,10 @@ Enable a logged-in user to create a new family group from the post-login experie
 - Automated test: the created membership is associated with the same family group that was just created.
 
 ## Open Questions for PO
-- What exact fields are required to create a family group in phase 1?
+- What exact fields are required to create a family group in this story?
 - What validation rules apply to those fields, including any naming constraints or uniqueness requirements?
 - What is the expected in-app destination immediately after creation if there are multiple valid landing points inside the new family group?
-- Should the phase-1 flow require any specific confirmation or failure-state behavior beyond generic success/failure handling?
+- Should this flow require any specific confirmation or failure-state behavior beyond generic success/failure handling?
 
 ## Readiness Assessment
 - **Not Ready for Development** — the required create fields, validation rules, and exact post-create destination still need PO clarification.
