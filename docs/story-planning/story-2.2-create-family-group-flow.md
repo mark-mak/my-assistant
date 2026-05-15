@@ -1,7 +1,7 @@
 # Story 2.2 — Create family group flow
 
 ## Refined Description
-Enable a logged-in user to create a new family group from the post-login experience. This story covers only the create-family-group path, automatic creation of the creator's initial membership, and routing into the newly created family-group context after success.
+Enable a logged-in user to create a new family group from the post-login experience. Scope is limited to create flow entry, successful group creation, automatic creator membership, and routing into the new family-group context.
 
 ## Acceptance Criteria (Definition of Done)
 - From the post-login experience, a logged-in user can open the create-family-group flow.
@@ -18,7 +18,7 @@ Enable a logged-in user to create a new family group from the post-login experie
 
 ## Assumptions
 - The creator is treated as an active member of the new family group immediately after successful creation.
-- The post-login experience is the only in-scope entry point for this create flow in this story.
+- In this story, create-family-group entry comes from the post-login experience.
 
 ## Testable Outcomes
 - Manual test: logged-in user can start the create-family-group flow from the post-login experience.
@@ -30,10 +30,12 @@ Enable a logged-in user to create a new family group from the post-login experie
 - What exact fields are required to create a family group in this story?
 - What validation rules apply to those fields, including any naming constraints or uniqueness requirements?
 - What is the expected in-app destination immediately after creation if there are multiple valid landing points inside the new family group?
-- Should this flow require any specific confirmation or failure-state behavior beyond generic success/failure handling?
+- What user-facing behavior is required for creation failures (for example, validation vs. backend failure)?
 
 ## Readiness Assessment
-- **Not Ready for Development** — the required create fields, validation rules, and exact post-create destination still need PO clarification.
+**Not Ready for Development**
+
+Reason: required create fields, field validation rules, post-create destination, and failure-state behavior need PO clarification before implementation can be considered testably complete.
 
 ## Sizing Note
 Do not include invitations or join-by-code in this story.
